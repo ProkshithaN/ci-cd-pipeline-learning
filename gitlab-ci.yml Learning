@@ -1,0 +1,5 @@
+test-job:
+   script: 
+       - echo "tetsing started.."
+
+#This is a very basic syntax a job, script under a job 
