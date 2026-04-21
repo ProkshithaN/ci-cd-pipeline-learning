@@ -1,0 +1,33 @@
+workflow:
+  name: Publication media
+
+before_script:
+  - echo "bob" > username.txt
+  - echo "username:"
+  - cat username.txt
+  - echo "password:"
+  - echo "*****"
+  - echo "you are logged in to your account"
+
+after_script:
+  - rm username.txt
+  - echo "you are logged out!"
+
+share_post:
+  script:
+    - echo "account owner:"
+    - cat username.txt
+    - echo "sharing post..."
+    - sleep 10s
+    - echo "post shared successfully!"
+
+delete_post:
+  script:
+    - echo "account owner:"
+    - cat username.txt
+    - echo "sharing post..."
+    - sleep 10s
+    - echo "post shared successfully!"
+
+
+Noted : before script and after script can be defined at job level or at pipline level where it is common for all the jobs defined in teh file as mentioned above
