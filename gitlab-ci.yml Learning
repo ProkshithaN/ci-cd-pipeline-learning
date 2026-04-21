@@ -3,3 +3,33 @@ test-job:
        - echo "tetsing started.."
 
 #This is a very basic syntax a job, script under a job 
+
+#############
+
+stages:
+    - build
+    - test
+    - deploy
+
+test-job:
+    stage : test
+    script:
+        - echo "testing is ongoinf"
+        - sleep 15s
+        - echo "testing complete"
+
+build job:
+    stage : build
+    script:
+        - echo "testing cicd pipleine"
+        - sleep 5s
+        - echo "build completed"
+
+deploy-job:
+    stage: deploy
+    script:
+        - echo "deploy job started"
+        - sleep 10s
+        - echo "deploy job completed"
+
+Note : in order to execute the jobs in order stages needs to be defined , based on the successfull completion of the stage next job will be executed else other jobs will be skipped.
