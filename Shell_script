@@ -1,0 +1,19 @@
+stages:
+  - test
+
+test-job:
+  stage: test
+  before_script:
+    - chmod +x testdoc.sh
+  script:
+    - ./testdoc.sh
+
+-----------testdoc.sh-------
+#!/bin/sh
+
+echo "testing is ongoinf"
+sleep 15s
+echo "testing complete"
+
+*****
+From repository --> wed_ide --> sh file can be configured and pipeline can be executed.
